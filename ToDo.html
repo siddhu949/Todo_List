@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<HTML>
+    <Head>
+        <title>ToDo_List</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            setInterval (function(){
+                var date=new Date()
+                var time=date.toLocaleTimeString();
+                document.getElementById("distime").innerText=time;
+            },1000)
+           setInterval(function () {
+    var now = new Date();
+    
+    // Format: Saturday, July 20, 2025
+    var dateString = now.toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    document.getElementById("disdate").innerText = dateString;
+}, 1000);
+        </script>
+        <style>
+            body{
+                position:relative;
+                margin:0;
+                padding :0;
+                
+            }
+            body::before{
+                content:"";
+                position:fixed;
+                background-image:url('image.png');
+                background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                opacity: 0.6;
+                z-index: -1; 
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+            }
+            .container{
+                  position: relative;
+                 max-width: 600px;
+                 margin: 40px auto;
+                 padding: 20px;
+                 background-color: rgba(240, 240, 240, 0.9); 
+                 border-radius: 10px;
+                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
+            }
+            #Taskdesc{
+                border-radius: 10px;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); 
+                background-color: rgb(178, 176, 184);
+            }
+
+        </style>
+        
+    </Head>
+    <body >
+        <h2 style="text-align: center;">ToDo List</h2>
+        <p id="disdate" style="text-align: center;"></p>
+        <p id="distime" style="text-align: center;"></p>
+       <div class="container">
+    <p>Add New Task</p>
+    <form>
+        <div class="form-group">
+            <label for="Taskdesc">Task Description</label>
+            <textarea id="Taskdesc" name="Taskdesc" rows="4" placeholder="Enter task description..."></textarea>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group half">
+                <label for="TargetDate">Target Date</label>
+                <input type="date" id="TargetDate" name="TargetDate">
+            </div>
+            <div class="form-group half">
+                <label for="TargetTime">Target Time</label>
+                <input type="time" id="TargetTime" name="TargetTime">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+                <option value="" disabled selected>Select status</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+                <option value="finished">Finished</option>
+                <option value="in_progress">In Progress</option>
+                <option value="on_hold">On Hold</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+
+        <button type="submit">Submit Task</button>
+    </form>
+</div>
+<div class="container">
+    <p id="displaytask"></p>
+    <table>
+        <tr>
+        <th>ID</th>
+        <th>Task Description</th>
+        <th>Target Date</th>
+        <th>Target Time</th>
+        <th>Status</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>project documentation</td>
+            <td>19-02-2025</td>
+            <td>10:00</td>
+            <td>compeleted</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>project documentation</td>
+            <td>19-02-2025</td>
+            <td>10:00</td>
+            <td>compeleted</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>project documentation</td>
+            <td>19-02-2025</td>
+            <td>10:00</td>
+            <td>compeleted</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>project documentation</td>
+            <td>19-02-2025</td>
+            <td>10:00</td>
+            <td>compeleted</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>project documentation</td>
+            <td>19-02-2025</td>
+            <td>10:00</td>
+            <td>compeleted</td>
+        </tr>
+
+    </table>
+</div>
+
+        
+        
+   </body>
+</HTML>
